@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-interface GalleryItemProps {
+interface ImageItemProps {
     data: {
       id: number;
       title: string;
@@ -11,7 +11,7 @@ interface GalleryItemProps {
     };
   }
 
-const Model: React.FC<GalleryItemProps> = ({ data }) => {    
+const Model: React.FC<ImageItemProps> = ({ data }) => {    
     const [selectedImage, setSelectedImage] = useState(null);
     
     const handleImageClick = (data:any) => {
@@ -20,7 +20,7 @@ const Model: React.FC<GalleryItemProps> = ({ data }) => {
       }
     return (
         <div>
-            <Image src={data.image} alt={data.title} width="80" height="80" onClick={() => handleImageClick(data.id)} style={{ cursor: 'pointer' }} />
+            <Image src={data.image} alt={data.title} width="480" height="0" onClick={() => handleImageClick(data.id)} style={{ cursor: 'pointer' }} />
             
         </div>
     )
